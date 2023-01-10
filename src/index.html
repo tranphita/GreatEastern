@@ -1,13 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>GreatEastern</title>
+  <title>Demo</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/carousel/">
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <app-root></app-root>
+  <main>
+    <app-root></app-root>
+  </main>
+
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.setInterval(ut, 500);
+    function ut() {
+      var d = new Date();
+      document.getElementById("time").innerHTML = d.toLocaleTimeString();
+      // document.getElementById("date").innerHTML = d.toLocaleDateString();
+    }
+  </script>
 </body>
+
 </html>

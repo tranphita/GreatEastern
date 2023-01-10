@@ -1,0 +1,264 @@
+@import 'https://fonts.googleapis.com/css?family=Nova+Mono|Eczar';
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* Hiển thị đồng hồ */
+#time {
+    font-family: 'Nova Mono', monospace;
+    font-size: 5vw;
+    text-align: center;
+    text-shadow: 0px 0px 20px;
+}
+
+.banner-btm-grid-w3ls {
+    position: absolute;
+    width: 70%;
+    top: 28em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px;
+}
+
+.clock {
+    padding: 5% 10% 5% 10%;
+}
+
+
+/* CSS Team*/
+.team {
+    margin-top: 20%;
+}
+
+/* CSS cho biểu đồ tròn */
+
+.chartpie {
+    background-color: rgb(122, 122, 122);
+    color: white;
+}
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --p {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 1;
+}
+
+.pie {
+    --p: 20;
+    --b: 20px;
+    --c: darkred;
+    --w: 150px;
+
+    width: 30%;
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    margin: 5px;
+    place-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.pie:before,
+.pie:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pie:before {
+    inset: 0;
+    background:
+        radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+        conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.pie:after {
+    inset: calc(50% - var(--b)/2);
+    background: var(--c);
+    transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+
+.animate {
+    animation: p 10s .15s both;
+    animation-delay: 5s;
+}
+
+.no-round:before {
+    background-size: 0 0, auto;
+}
+
+.no-round:after {
+    content: none;
+}
+
+@keyframes p {
+    from {
+        --p: 0
+    }
+}
+
+.num1 {
+    animation: counter1 10s .15s both;
+    animation-delay: 5s;
+    counter-reset: num var(--num);
+}
+
+.num2 {
+    animation: counter2 10s .15s both;
+    animation-delay: 5s;
+    counter-reset: num var(--num);
+}
+
+.num3 {
+    animation: counter3 10s .15s both;
+    animation-delay: 5s;
+    counter-reset: num var(--num);
+}
+
+.num4 {
+    animation: counter4 10s .15s both;
+    animation-delay: 5s;
+    counter-reset: num var(--num);
+}
+
+.num5 {
+    animation: counter5 10s .15s both;
+    animation-delay: 5s;
+    counter-reset: num var(--num);
+}
+
+.num6 {
+    animation: counter6 10s .15s both;
+    animation-delay: 5s;
+    counter-reset: num var(--num);
+}
+
+.num1::after,
+.num2::after,
+.num3::after,
+.num4::after,
+.num5::after,
+.num6::after {
+    content: counter(num) "%";
+}
+
+@keyframes counter1 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--numberto1);
+    }
+}
+
+@keyframes counter2 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--numberto2);
+    }
+}
+
+@keyframes counter3 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--numberto3);
+    }
+}
+
+@keyframes counter4 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--numberto4);
+    }
+}
+
+@keyframes counter5 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--numberto5);
+    }
+}
+
+@keyframes counter6 {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--numberto6);
+    }
+}
